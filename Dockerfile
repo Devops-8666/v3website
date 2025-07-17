@@ -1,16 +1,20 @@
+# Use the official Nginx image as a base
 FROM nginx:alpine
 
-USER root
+# Copy your static web app files (HTML, CSS, JS, etc.) to the Nginx directory
+COPY ./index.html /usr/share/nginx/html/index.html
+COPY ./about.html /usr/share/nginx/html/about.html
+COPY ./contact.html /usr/share/nginx/html/contact.html
+COPY ./services.html /usr/share/nginx/html/services.html
+COPY ./solutions.html /usr/share/nginx/html/solutions.html
+COPY ./css /usr/share/nginx/html/css
+COPY ./js /usr/share/nginx/html/js
+COPY ./assets /usr/share/nginx/html/assets
+COPY ./chatbot /usr/share/nginx/html/chatbot
 
-# Fix the permissions for the /usr/share/nginx/html/ directory
-RUN chmod -R 777 /usr/share/nginx/html/
+# Expose the port that Nginx will listen on
+EXPOSE 80
 
-# Create and set permissions for the cache directory
-RUN mkdir -p /var/cache/nginx/client_temp && chmod -R 777 /var/cache/nginx
-
-# Switch back to nginx user
-USER nginx
-
-# Now, remove the default nginx html files
-RUN rm -rf /usr/share/nginx/html/*
+# The default command to run when the container starts
+CMD ["nginx", "-g", "daemon off;"]
 
