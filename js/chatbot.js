@@ -1,6 +1,6 @@
 // Floating chatbot toggle button
 const chatbotBtn = document.createElement('button');
-chatbotBtn.innerText = '💬 Chat';
+chatbotBtn.innerText = '💬 V3 Assistant';
 chatbotBtn.style.position = 'fixed';
 chatbotBtn.style.bottom = '20px';
 chatbotBtn.style.right = '20px';
@@ -24,12 +24,12 @@ chatbotBox.style.height = '430px';
 chatbotBox.style.zIndex = '9999';
 chatbotBox.innerHTML = `
   <iframe
-    allow=\"microphone;\"
-    width=\"350\"
-    height=\"430\"
-    src=\"https://bot.dialogflow.com/1ee6f73b-63b1-4beb-92eb-c3484835aed8\">
-  </iframe>
-`;
+    allow="microphone;"
+    width="100%"
+    height="100%"
+    src="https://bot.dialogflow.com/1ee6f73b-63b1-4beb-92eb-c3484835aed8"
+    style="border:none;">
+  </iframe>`;
 document.body.appendChild(chatbotBox);
 
 // Toggle visibility on click
