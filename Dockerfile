@@ -1,17 +1,16 @@
-# Use official NGINX image
 FROM nginx:alpine
+
 USER root
+
+# Fix the permissions for the /usr/share/nginx/html/ directory
+RUN chmod -R 777 /usr/share/nginx/html/
+
+# Create and set permissions for the cache directory
 RUN mkdir -p /var/cache/nginx/client_temp && chmod -R 777 /var/cache/nginx
+
+# Switch back to nginx user
 USER nginx
 
-# Remove default nginx website
+# Now, remove the default nginx html files
 RUN rm -rf /usr/share/nginx/html/*
-
-# Copy your static site files
-COPY . /usr/share/nginx/html/
-
-# Expose port 80
-EXPOSE 80
-
-# Start NGINX (default CMD is fine for nginx:alpine)
 
