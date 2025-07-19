@@ -1,88 +1,94 @@
-// V3 Assistant Chatbot - chatbot.js
-
-// Create Floating Button
+<!-- chatbot.js -->
+<script type="text/javascript">
+// Create the floating button
 const chatButton = document.createElement("div");
-chatButton.id = "chat-button";
-chatButton.innerText = "V3 Assistant 💬";
-chatButton.style.cssText = `
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #007bff;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 14px 20px;
-  border-radius: 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  cursor: pointer;
-  z-index: 9999;
-  font-family: Arial, sans-serif;
-`;
-chatButton.onclick = toggleV3Assistant;
+chatButton.id = "v3-chat-button";
+chatButton.innerHTML = `V3 Assistant 💬`;
+chatButton.style.position = "fixed";
+chatButton.style.bottom = "20px";
+chatButton.style.right = "20px";
+chatButton.style.backgroundColor = "#007bff";
+chatButton.style.color = "white";
+chatButton.style.borderRadius = "50px";
+chatButton.style.padding = "10px 16px";
+chatButton.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+chatButton.style.cursor = "pointer";
+chatButton.style.fontWeight = "bold";
+chatButton.style.fontFamily = "Arial, sans-serif";
+chatButton.style.zIndex = "9999";
 document.body.appendChild(chatButton);
 
-// Create Chat Window
-const chatWindow = document.createElement("div");
-chatWindow.id = "v3-assistant";
-chatWindow.style.cssText = `
-  display: none;
-  position: fixed;
-  bottom: 100px;
-  right: 30px;
-  width: 320px;
-  height: 450px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  z-index: 9998;
-  overflow: hidden;
-  font-family: Arial, sans-serif;
+// Create the chatbox container
+const chatBox = document.createElement("div");
+chatBox.id = "v3-chatbox";
+chatBox.style.position = "fixed";
+chatBox.style.bottom = "80px";
+chatBox.style.right = "20px";
+chatBox.style.width = "300px";
+chatBox.style.maxHeight = "400px";
+chatBox.style.backgroundColor = "white";
+chatBox.style.border = "1px solid #ccc";
+chatBox.style.borderRadius = "10px";
+chatBox.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+chatBox.style.display = "none";
+chatBox.style.flexDirection = "column";
+chatBox.style.overflow = "hidden";
+chatBox.style.zIndex = "9999";
+document.body.appendChild(chatBox);
+
+// Populate chat content
+chatBox.innerHTML = `
+  <div style="background-color: #007bff; color: white; padding: 10px; font-weight: bold;">
+    👋 Hi, I'm V3 Assistant
+  </div>
+  <div style="padding: 10px; font-family: Arial; font-size: 14px;">
+    How can I help you today?<br><br>
+    1. View Services<br>
+    2. Contact Info<br>
+    3. Talk to Human<br><br>
+    <input type="text" id="v3-user-input" placeholder="Type 1, 2 or 3..." style="width: 90%; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"><br><br>
+    <button id="v3-submit-btn" style="background-color: #007bff; color: white; padding: 6px 12px; border: none; border-radius: 5px;">Submit</button>
+  </div>
 `;
 
-chatWindow.innerHTML = `
-  <div style="background: #007bff; color: #fff; padding: 12px 16px;">
-    <strong>V3 Assistant 🤖</strong>
-    <span onclick="document.getElementById('v3-assistant').style.display='none'" style="float:right; cursor:pointer;">×</span>
-  </div>
-  <div id="chat-content" style="padding: 15px; height: calc(100% - 110px); overflow-y: auto;">
-    <p>Hello! I'm <strong>V3 Assistant</strong> 👋<br>How can I help you today?</p>
-  </div>
-  <div style="padding: 10px; border-top: 1px solid #eee;">
-    <input type="text" id="userInput" placeholder="Type your message..." style="width: 72%; padding: 8px; border: 1px solid #ccc; border-radius: 6px;">
-    <button id="sendBtn" style="padding: 8px 10px; background: #007bff; color: white; border: none; border-radius: 6px;">Send</button>
-  </div>
-`;
-
-document.body.appendChild(chatWindow);
-
-// Toggle Chat Window
-function toggleV3Assistant() {
-  const box = document.getElementById("v3-assistant");
-  box.style.display = (box.style.display === "none" || !box.style.display) ? "block" : "none";
-}
-
-// Handle Message Sending
-function sendMessage() {
-  const input = document.getElementById("userInput");
-  const chat = document.getElementById("chat-content");
-
-  if (input.value.trim() !== "") {
-    const userMsg = document.createElement("p");
-    userMsg.innerHTML = `<strong>You:</strong> ${input.value}`;
-    chat.appendChild(userMsg);
-
-    const botReply = document.createElement("p");
-    botReply.innerHTML = `<strong>V3 Assistant:</strong> Thank you! We’ll get back to you soon.`;
-    chat.appendChild(botReply);
-
-    chat.scrollTop = chat.scrollHeight;
-    input.value = "";
-  }
-}
-
-// Attach event listener
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("sendBtn").onclick = sendMessage;
+// Toggle chatbox visibility
+chatButton.addEventListener("click", () => {
+  chatBox.style.display = chatBox.style.display === "none" ? "flex" : "none";
 });
+
+// Handle input
+document.getElementById("v3-submit-btn").addEventListener("click", () => {
+  const input = document.getElementById("v3-user-input").value.trim();
+
+  if (input === "1") {
+    alert("📄 Our services include Web Development, Cloud Solutions, and IT Consulting.");
+  } else if (input === "2") {
+    alert("📧 Email: vinay.kumar@v3software.com\n📞 Phone: +91-XXXX-XXXXXX");
+  } else if (input === "3") {
+    if (typeof Tawk_API !== "undefined") {
+      Tawk_API.maximize(); // Show Tawk.to live chat
+    } else {
+      alert("Live chat is loading. Please wait a moment...");
+    }
+  } else {
+    alert("Please enter 1, 2 or 3.");
+  }
+
+  document.getElementById("v3-user-input").value = "";
+});
+</script>
+
+<!-- Start of Tawk.to Script -->
+<script type="text/javascript">
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+(function(){
+  var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/687b207214ecf21919c827d8/1j0gfdg2v';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin', '*');
+  s0.parentNode.insertBefore(s1, s0);
+})();
+</script>
+<!-- End of Tawk.to Script -->
 
