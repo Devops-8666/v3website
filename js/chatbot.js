@@ -1,85 +1,6 @@
-<!-- chatbot.js -->
+<!-- ✅ Start of V3 Assistant Chat Script -->
 <script type="text/javascript">
-// Create the floating button
-const chatButton = document.createElement("div");
-chatButton.id = "v3-chat-button";
-chatButton.innerHTML = `V3 Assistant 💬`;
-chatButton.style.position = "fixed";
-chatButton.style.bottom = "20px";
-chatButton.style.right = "20px";
-chatButton.style.backgroundColor = "#007bff";
-chatButton.style.color = "white";
-chatButton.style.borderRadius = "50px";
-chatButton.style.padding = "10px 16px";
-chatButton.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
-chatButton.style.cursor = "pointer";
-chatButton.style.fontWeight = "bold";
-chatButton.style.fontFamily = "Arial, sans-serif";
-chatButton.style.zIndex = "9999";
-document.body.appendChild(chatButton);
-
-// Create the chatbox container
-const chatBox = document.createElement("div");
-chatBox.id = "v3-chatbox";
-chatBox.style.position = "fixed";
-chatBox.style.bottom = "80px";
-chatBox.style.right = "20px";
-chatBox.style.width = "300px";
-chatBox.style.maxHeight = "400px";
-chatBox.style.backgroundColor = "white";
-chatBox.style.border = "1px solid #ccc";
-chatBox.style.borderRadius = "10px";
-chatBox.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
-chatBox.style.display = "none";
-chatBox.style.flexDirection = "column";
-chatBox.style.overflow = "hidden";
-chatBox.style.zIndex = "9999";
-document.body.appendChild(chatBox);
-
-// Populate chat content
-chatBox.innerHTML = `
-  <div style="background-color: #007bff; color: white; padding: 10px; font-weight: bold;">
-    👋 Hi, I'm V3 Assistant
-  </div>
-  <div style="padding: 10px; font-family: Arial; font-size: 14px;">
-    How can I help you today?<br><br>
-    1. View Services<br>
-    2. Contact Info<br>
-    3. Talk to Human<br><br>
-    <input type="text" id="v3-user-input" placeholder="Type 1, 2 or 3..." style="width: 90%; padding: 5px; border: 1px solid #ccc; border-radius: 5px;"><br><br>
-    <button id="v3-submit-btn" style="background-color: #007bff; color: white; padding: 6px 12px; border: none; border-radius: 5px;">Submit</button>
-  </div>
-`;
-
-// Toggle chatbox visibility
-chatButton.addEventListener("click", () => {
-  chatBox.style.display = chatBox.style.display === "none" ? "flex" : "none";
-});
-
-// Handle input
-document.getElementById("v3-submit-btn").addEventListener("click", () => {
-  const input = document.getElementById("v3-user-input").value.trim();
-
-  if (input === "1") {
-    alert("📄 Our services include Web Development, Cloud Solutions, and IT Consulting.");
-  } else if (input === "2") {
-    alert("📧 Email: vinay.kumar@v3software.com\n📞 Phone: +91-XXXX-XXXXXX");
-  } else if (input === "3") {
-    if (typeof Tawk_API !== "undefined") {
-      Tawk_API.maximize(); // Show Tawk.to live chat
-    } else {
-      alert("Live chat is loading. Please wait a moment...");
-    }
-  } else {
-    alert("Please enter 1, 2 or 3.");
-  }
-
-  document.getElementById("v3-user-input").value = "";
-});
-</script>
-
-<!-- Start of Tawk.to Script -->
-<script type="text/javascript">
+// Inject Tawk.to Script
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 (function(){
   var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
@@ -89,6 +10,87 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
   s1.setAttribute('crossorigin', '*');
   s0.parentNode.insertBefore(s1, s0);
 })();
+
+// Create and inject the floating button
+const chatButton = document.createElement("button");
+chatButton.innerHTML = `<span style="margin-right: 5px;">💬</span> V3 Assistant`;
+chatButton.style.position = "fixed";
+chatButton.style.bottom = "20px";
+chatButton.style.right = "20px";
+chatButton.style.zIndex = "9999";
+chatButton.style.backgroundColor = "#007bff";
+chatButton.style.color = "white";
+chatButton.style.border = "none";
+chatButton.style.borderRadius = "50px";
+chatButton.style.padding = "12px 18px";
+chatButton.style.fontSize = "16px";
+chatButton.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+chatButton.style.cursor = "pointer";
+chatButton.style.display = "flex";
+chatButton.style.alignItems = "center";
+chatButton.style.transition = "all 0.3s ease-in-out";
+chatButton.addEventListener("click", toggleChatBox);
+document.body.appendChild(chatButton);
+
+// Create the chat box
+const chatBox = document.createElement("div");
+chatBox.style.position = "fixed";
+chatBox.style.bottom = "80px";
+chatBox.style.right = "20px";
+chatBox.style.width = "320px";
+chatBox.style.maxHeight = "400px";
+chatBox.style.backgroundColor = "#fff";
+chatBox.style.border = "1px solid #ccc";
+chatBox.style.borderRadius = "10px";
+chatBox.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.3)";
+chatBox.style.padding = "15px";
+chatBox.style.zIndex = "9999";
+chatBox.style.display = "none";
+chatBox.style.flexDirection = "column";
+chatBox.style.overflow = "auto";
+chatBox.style.fontFamily = "Arial, sans-serif";
+
+chatBox.innerHTML = `
+  <h5 style="margin: 0 0 10px; font-weight: bold;">Hi, I'm V3 Assistant 👋</h5>
+  <p style="margin-bottom: 10px;">How can I help you today?</p>
+  <ol style="margin-left: 15px;">
+    <li>View Services</li>
+    <li>Contact Info</li>
+    <li>Talk to Human</li>
+  </ol>
+  <input id="userInput" type="text" placeholder="Type 1, 2 or 3..." style="width: 100%; padding: 6px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;" />
+  <button onclick="handleUserInput()" style="margin-top: 10px; padding: 6px 10px; background-color: #007bff; color: white; border: none; border-radius: 5px;">Send</button>
+  <div id="chatResponse" style="margin-top: 10px;"></div>
+`;
+document.body.appendChild(chatBox);
+
+// Toggle the visibility of the chat box
+function toggleChatBox() {
+  chatBox.style.display = chatBox.style.display === "none" ? "flex" : "none";
+}
+
+// Handle user input
+function handleUserInput() {
+  const input = document.getElementById("userInput").value.trim();
+  const responseBox = document.getElementById("chatResponse");
+
+  if (input === "1") {
+    responseBox.innerHTML = "🔍 Visit our <a href='services.html' target='_blank'>Services Page</a> to know more.";
+  } else if (input === "2") {
+    responseBox.innerHTML = "📧 You can email us at <a href='mailto:vinay.kumar@v3software.com'>vinay.kumar@v3software.com</a>";
+  } else if (input === "3") {
+    responseBox.innerHTML = "👨‍💬 Connecting you to a live agent...";
+    if (typeof Tawk_API !== "undefined") {
+      Tawk_API.maximize();
+    } else {
+      responseBox.innerHTML += "<br><em>(Live chat is still loading... please try again in a moment)</em>";
+    }
+  } else {
+    responseBox.innerHTML = "❗ Please enter 1, 2, or 3.";
+  }
+
+  document.getElementById("userInput").value = "";
+}
 </script>
-<!-- End of Tawk.to Script -->
+<!-- ✅ End of V3 Assistant Chat Script -->
 
