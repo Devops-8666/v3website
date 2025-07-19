@@ -1,5 +1,3 @@
-<!-- ✅ Start of V3 Assistant Chat Script -->
-<script type="text/javascript">
 // Inject Tawk.to Script
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 (function(){
@@ -54,9 +52,9 @@ chatBox.innerHTML = `
   <h5 style="margin: 0 0 10px; font-weight: bold;">Hi, I'm V3 Assistant 👋</h5>
   <p style="margin-bottom: 10px;">How can I help you today?</p>
   <ol style="margin-left: 15px;">
-    <li>View Services</li>
-    <li>Contact Info</li>
-    <li>Talk to Human</li>
+  <li><a href="services.html" target="_blank" style="text-decoration: none;">🔍 View Services</a></li>
+  <li><a href="contact.html" target="_blank" style="text-decoration: none;">📇 Contact Info</a></li>
+  <li><a href="#" onclick="if (typeof Tawk_API !== 'undefined') Tawk_API.maximize(); return false;" style="text-decoration: none;">💬 Talk to Human</a></li>
   </ol>
   <input id="userInput" type="text" placeholder="Type 1, 2 or 3..." style="width: 100%; padding: 6px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;" />
   <button onclick="handleUserInput()" style="margin-top: 10px; padding: 6px 10px; background-color: #007bff; color: white; border: none; border-radius: 5px;">Send</button>
@@ -91,6 +89,3 @@ function handleUserInput() {
 
   document.getElementById("userInput").value = "";
 }
-</script>
-<!-- ✅ End of V3 Assistant Chat Script -->
-
