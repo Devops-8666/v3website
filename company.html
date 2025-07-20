@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company | V3 Software</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+    }
+
+    header {
+      background: #0056b3;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #e0e0e0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+    }
+
+    .menu {
+      flex: 1 1 250px;
+      max-width: 300px;
+      padding-right: 2rem;
+    }
+
+    .menu h3 {
+      font-size: 18px;
+      margin-bottom: 0.5rem;
+    }
+
+    .menu a {
+      display: block;
+      margin: 8px 0;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .menu a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      flex: 3;
+      min-width: 300px;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      color: #0056b3;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .profile {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      gap: 1rem;
+    }
+
+    .profile img {
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .menu {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 2rem;
+      }
+      .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="images/logo.png" alt="V3 Logo" />
+    <strong>V3 SOFTWARE</strong>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="solutions.html">Solutions</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="company.html" style="font-weight:bold;">Company</a></li>
+      <li><a href="chat.html">Chat</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="menu">
+    <h3>📋 ABOUT US</h3>
+    <a href="#who">› Who we are</a>
+    <a href="#culture">› Our Culture</a>
+    <a href="#values">› Our Values</a>
+    <a href="#directors">› Board of Directors</a>
+    <a href="#executives">› Key Executives</a>
+    <a href="#team">› Our Team</a>
+    <a href="#events">› Events</a>
+    <a href="#patent">› Patent</a>
+
+    <h3>📊 INVESTORS</h3>
+    <a href="#financials">› Financials</a>
+    <a href="#governance">› Corporate Governance</a>
+    <a href="#faq">› Investor FAQ</a>
+    <a href="#highlights">› Highlights</a>
+
+    <h3>💼 CAREERS</h3>
+    <a href="#careers">› Join Us</a>
+  </div>
+
+  <div class="content">
+    <section id="who">
+      <h2>Who We Are</h2>
+      <p>V3 Software is a leading-edge consultancy offering tailored digital transformation services. Our mission is to empower businesses with scalable, secure, and efficient software solutions. We specialize in DevOps, full-stack development, cloud migration, and infrastructure automation. Founded by industry experts, we believe in agile principles and building long-term client partnerships. From startups to enterprises, we deliver tech that drives innovation and growth across sectors.</p>
+    </section>
+
+    <section id="culture">
+      <h2>Our Culture</h2>
+      <p>At V3, we thrive on collaboration, experimentation, and excellence. Our culture is built around trust, inclusivity, and curiosity. We support hybrid work, continuous learning, and ownership at every level. The V3 team works in sync to create tech that matters — in an environment where everyone’s voice is valued and heard.</p>
+    </section>
+
+    <section id="values">
+      <h2>Our Values</h2>
+      <ul>
+        <li>Transparency and accountability</li>
+        <li>Customer-first mindset</li>
+        <li>Quality over quantity</li>
+        <li>Speed, but with stability</li>
+      </ul>
+    </section>
+
+    <section id="directors">
+      <h2>Board of Directors</h2>
+
+      <div class="profile">
+        <img src="images/director1.jpg" alt="Director 1" width="120" height="120">
+        <div>
+          <h4>Vinay Kumar</h4>
+          <p>Vinay brings over 15 years of enterprise IT experience and leads strategy, compliance, and innovation. His leadership has guided V3’s expansion into emerging markets and mission-critical digital systems.</p>
+        </div>
+      </div>
+
+      <div class="profile">
+        <img src="images/director2.jpg" alt="Director 2" width="120" height="120">
+        <div>
+          <h4>Rupsa Sarma</h4>
+          <p>Meera oversees technology innovation and future readiness. With a strong background in AI and cloud, she ensures V3 remains agile and customer-aligned in a fast-changing tech world.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="executives">
+      <h2>Key Executives</h2>
+      <p>Our executive leadership includes seasoned professionals across engineering, operations, and business strategy. They ensure V3 delivers consistent value, meets stakeholder expectations, and nurtures talent across teams.</p>
+    </section>
+
+    <section id="team">
+      <h2>Our Team</h2>
+
+      <div class="profile">
+        <img src="images/dev1.jpg" alt="Developer 1" width="120" height="120">
+        <div>
+          <h4>Harshit Raj – Frontend Developer</h4>
+          <p>Harshit designs stunning interfaces using React and Tailwind. She ensures each product is responsive, user-friendly, and aligned with modern UX best practices.</p>
+        </div>
+      </div>
+
+      <div class="profile">
+        <img src="images/dev2.jpg" alt="Developer 2" width="120" height="120">
+        <div>
+          <h4>Khushi Rani – Backend Developer</h4>
+          <p>Khushi builds resilient APIs and manages cloud databases. He brings performance and scalability to every project using Node.js and PostgreSQL.</p>
+        </div>
+      </div>
+
+      <div class="profile">
+        <img src="images/dev3.jpg" alt="Developer 3" width="120" height="120">
+        <div>
+          <h4>Manisha Kapoor – DevOps Engineer</h4>
+          <p>Manisha drives automation and CI/CD pipelines, ensuring fast and stable deployments. She's an advocate of infrastructure as code and continuous delivery.</p>
+        </div>
+      </div>
+
+      <div class="profile">
+        <img src="images/shareholder1.jpg" alt="Shareholder 1" width="120" height="120">
+        <div>
+          <h4>Virendra Kumar Sharma – Shareholder</h4>
+          <p>Virendra is a venture capital advisor with a deep understanding of enterprise SaaS. His vision helps V3 scale responsibly and enter high-potential markets.</p>
+        </div>
+      </div>
+
+      <div class="profile">
+        <img src="images/shareholder2.jpg" alt="Shareholder 2" width="120" height="120">
+        <div>
+          <h4>Sagar Sharma – Shareholder</h4>
+          <p>Sagar supports V3’s innovation goals through strategic investment and governance. Her focus on ethical AI and fintech drives long-term sustainability.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="events">
+      <h2>Events</h2>
+      <p>We host and participate in developer meetups, Kubernetes bootcamps, AWS summits, and community-led hackathons. These events strengthen our learning and open-source contributions.</p>
+    </section>
+
+    <section id="patent">
+      <h2>Patent</h2>
+      <p>V3 has filed a patent for its AI-powered deployment tool — “SmartStackOps” — which accelerates and risk-assesses infra changes across hybrid cloud environments.</p>
+    </section>
+
+    <section id="financials">
+      <h2>Financials</h2>
+      <p>Privately held, V3 maintains stable year-on-year growth, high retention, and a strong services portfolio. Financials are shared with select partners and investors upon NDA execution.</p>
+    </section>
+
+    <section id="governance">
+      <h2>Corporate Governance</h2>
+      <p>We follow best-in-class governance practices, including regular audits, board oversight, data protection policy adherence, and zero-tolerance toward conflicts of interest.</p>
+    </section>
+
+    <section id="faq">
+      <h2>Investor FAQ</h2>
+      <p><strong>Q: Is V3 open to funding?</strong><br>Yes, through strategic investors aligned with our values.<br>
+      <strong>Q: What’s your burn rate?</strong><br>Our operational efficiency ensures a lean burn with high ROI from service engagements and product prototypes.</p>
+    </section>
+
+    <section id="highlights">
+      <h2>Highlights</h2>
+      <p>2025 Q1: Entered EU market<br>
+      2024: Launched 3 enterprise tools<br>
+      2023: 100% remote readiness<br>
+      2022: ISO 27001 certified<br>
+      2021: Partnership with AWS & GCP</p>
+    </section>
+
+    <section id="careers">
+      <h2>Careers</h2>
+      <p>Join V3 and grow with a purpose. Email your CV to <a href="mailto:careers@v3software.com">careers@v3software.com</a>. We are actively hiring across frontend, backend, QA, and DevOps roles.</p>
+    </section>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 V3 Software Consultancy Services Pvt Ltd
+</footer>
+
+</body>
+</html>
+
