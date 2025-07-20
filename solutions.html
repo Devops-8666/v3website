@@ -10,59 +10,65 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-white shadow-sm px-4">
-  <a class="navbar-brand d-flex align-items-center" href="index.html">
-    <img src="assets/logo.png" alt="V3 Logo" width="40" class="me-2">
-    <div>
-      <strong>V3 SOFTWARE</strong><br/>
-      <small>CONSULTANCY SERVICES<br/>PRIVATE LIMITED</small>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/logo.png" alt="V3 Logo" width="40" class="me-2">
+      <strong>V3 SOFTWARE</strong><br />
+      <small>Consultancy Services Pvt Ltd</small>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="solutions.html">Solutions</a></li>
+        <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="company.html">Company</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </a>
-  <div class="ms-auto">
-    <ul class="navbar-nav">
-      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-      <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-      <li class="nav-item"><a class="nav-link active" href="solutions.html">Solutions</a></li>
-      <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
-      <li class="nav-item"><a class="nav-link" href="company.html">Company</a></li>
-      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-    </ul>
   </div>
 </nav>
 
+<!-- Header -->
 <header class="bg-primary text-white text-center py-5">
   <div class="container">
-    <h1>Solutions</h1>
-    <p>Innovative, Scalable, and Secure IT Solutions</p>
+    <h1>Our Solutions</h1>
+    <p>Innovative, Scalable, and Secure IT Solutions Tailored for the Cloud Era</p>
   </div>
 </header>
 
+<!-- Solutions Section -->
 <section class="container py-5">
   <div class="row text-center">
     <div class="col-md-6 mb-4">
-      <h4>Enterprise DevOps Platform</h4>
-      <p>Centralized CI/CD orchestration using OpenShift and GitOps pipelines.</p>
+      <h4>⚙️ Enterprise DevOps Platform</h4>
+      <p>Centralized CI/CD orchestration built on OpenShift with GitOps integration, enabling rapid releases and infrastructure automation.</p>
     </div>
     <div class="col-md-6 mb-4">
-      <h4>Automated Email Intelligence</h4>
-      <p>AutoMail Reply – AI engine that processes, replies, and summarizes emails intelligently.</p>
+      <h4>📬 Automated Email Intelligence</h4>
+      <p>AutoMail Reply – Our AI-based email assistant that intelligently reads, classifies, replies, and summarizes incoming business communication.</p>
     </div>
     <div class="col-md-6 mb-4">
-      <h4>Cloud-Native Infrastructure</h4>
-      <p>Highly available and container-native infrastructure using Kubernetes and cloud platforms.</p>
+      <h4>☁️ Cloud-Native Infrastructure</h4>
+      <p>Resilient, secure, and scalable cloud environments using Kubernetes and hybrid/multi-cloud infrastructure.</p>
     </div>
     <div class="col-md-6 mb-4">
-      <h4>Secure Source Control</h4>
-      <p>Custom Git hosting solutions integrated with RBAC, SSO, and audit logging.</p>
+      <h4>🔒 Secure Source Control</h4>
+      <p>Private Git hosting solution with enterprise-grade access controls, LDAP/SSO integration, audit logging, and policy enforcement.</p>
     </div>
   </div>
 
-  <div class="text-center mt-4">
-    <img src="assets/images/project-dashboard.jpg" alt="Project Screenshot" class="img-fluid rounded shadow" style="max-width: 700px;">
+  <div class="text-center mt-5">
+    <img src="assets/images/project-dashboard.jpg" alt="Solution Dashboard" class="img-fluid rounded shadow" style="max-width: 700px;">
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="bg-dark text-white text-center py-4">
   <div class="container">
     <p>&copy; 2025 V3 Software Consultancy Services Pvt Ltd</p>
@@ -70,7 +76,9 @@
   </div>
 </footer>
 
+<!-- Scripts -->
 <script src="js/chatbot.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
