@@ -1,1 +1,4 @@
-http://v3software.com/* https://www.v3software.com/:s 301!
+/index     /index.html    200
+/contact   /contact.html  200
+/about     /about.html    200
+
