@@ -1,15 +1,11 @@
-# Use the official Nginx image from the Docker Hub
-FROM nginx:alpine
+FROM python:3.11-slim
 
-# Set the working directory
-WORKDIR /usr/share/nginx/html
-
-# Copy the content of the current directory to the container’s Nginx html folder
+WORKDIR /app
 COPY . .
 
-# Expose port 80 (Nginx default port)
-EXPOSE 80
+RUN pip install --no-cache-dir Flask==2.3.3 gunicorn
 
-# Start Nginx in the foreground
-CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 10000
+
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:10000", "main:app"]
 
