@@ -1,8 +1,11 @@
-# OpenShift compatible NGINX image
-FROM registry.access.redhat.com/ubi9/nginx-122
+FROM nginx:alpine
 
-# Copy website files
-COPY . /opt/app-root/src
+WORKDIR /usr/share/nginx/html
 
-# Expose application port
+COPY . .
+
+COPY nginx.conf /etc/nginx/nginx.conf
+
 EXPOSE 8080
+
+CMD ["nginx", "-g", "daemon off;"]
