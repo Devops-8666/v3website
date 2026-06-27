@@ -1,15 +1,8 @@
-# Use the official Nginx image from the Docker Hub
-FROM nginx:alpine
+# OpenShift compatible NGINX image
+FROM registry.access.redhat.com/ubi9/nginx-122
 
-# Set the working directory
-WORKDIR /usr/share/nginx/html
+# Copy website files
+COPY . /opt/app-root/src
 
-# Copy the content of the current directory to the container’s Nginx html folder
-COPY . .
-
-# Expose port 80 (Nginx default port)
-EXPOSE 80
-
-# Start Nginx in the foreground
-CMD ["nginx", "-g", "daemon off;"]
-
+# Expose application port
+EXPOSE 8080
